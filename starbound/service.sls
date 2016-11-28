@@ -1,9 +1,20 @@
 # -*- coding: utf-8 -*-
 # vim: ft=sls
 
-{% from "template/map.jinja" import template with context %}
+{% from "starbound/map.jinja" import starbound with context %}
 
-template-name:
-  service.running:
-    - name: {{ template.service.name }}
-    - enable: True
+include:
+  - starbound.install
+
+starbound-container:
+  dockerng.running:
+    - name: {{ starbound.name }}
+    - image: {{ starbound.image }}
+    - binds: {{ starbound.data }}:/server/steamcmd/starbound
+    - port_bindings:
+      - {{ starbound.port }}:21025
+    - environment:
+      - STEAM_USERNAME: {{ starbound.steam.username }}
+      - STEAM_PASSWORD: {{ starbound.steam.password }}
+    - require:
+      - dockerng: starbound-image

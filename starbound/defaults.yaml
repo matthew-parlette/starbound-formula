@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 # vim: ft=yaml
-template:
-  pkg: template
-  config: '/etc/template'
-  service:
-    name: template
+starbound:
+  image: lacsap/starbound
+  name: starbound
+  port: 21025
