@@ -1,3 +1,7 @@
-template:
-  lookup:
-    master: template-master
+starbound:
+  # image: lacsap/starbound
+  # data: /path/to/data/dir
+  # port: 21025
+  steam:
+    username: steamusername
+    password: steampassword

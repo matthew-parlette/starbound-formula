@@ -1,14 +1,17 @@
-================
-template-formula
-================
+=================
+starbound-formula
+=================
 
-A saltstack formula that is empty. It has dummy content to help with a quick
-start on a new formula.
+A state to manage the running of a Starbound dedicated server.
+
+The server is run in a docker container.
+
+The steam username and password must be provided in a pillar, and the account must have Steam Guard disabled.
 
 .. note::
 
-    See the full `Salt Formulas installation and usage instructions
-    <http://docs.saltstack.com/en/latest/topics/development/conventions/formulas.html>`_.
+    See the additional info section of the `docker hub repository
+    <https://hub.docker.com/r/lacsap/starbound/>`_.
 
 Available states
 ================
@@ -16,7 +19,7 @@ Available states
 .. contents::
     :local:
 
-``template``
-------------
+``starbound``
+-------------
 
-Installs the template package, and starts the associated template service.
+Installs the starbound image, and starts a starbound container.
