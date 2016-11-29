@@ -4,3 +4,4 @@ starbound:
   image: lacsap/starbound
   name: starbound
   port: 21025
+  data: /srv/starbound

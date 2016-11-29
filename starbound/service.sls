@@ -6,6 +6,12 @@
 include:
   - starbound.install
 
+starbound-data:
+  file.directory:
+    - name: {{ starbound.data }}
+    - user: root
+    - group: root
+
 starbound-container:
   dockerng.running:
     - name: {{ starbound.name }}
@@ -18,3 +24,4 @@ starbound-container:
       - STEAM_PASSWORD: {{ starbound.steam.password }}
     - require:
       - dockerng: starbound-image
+      - file: {{ starbound.data }}
